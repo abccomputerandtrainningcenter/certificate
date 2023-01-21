@@ -1,8 +1,13 @@
-.carousel-img {
-    background-image: url(../images/banner.png);
-    height: 80vh;
-    width: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+* {
+    font-family: 'Varela Round', sans-serif;
 }
+
+/* @media screen and (max-width: 576px) {
+    .col-md-4 {
+        align-content: center;
+
+        text-align: center;
+    }
+} */
