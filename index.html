@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .search-section {
+            margin-top: 50px;
+        }
+
+        .footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="https://teamsabc.com/">ABC COMPUTER</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container text-center search-section">
+        <h1>Certificate Verification</h1>
+        <p>Enter your certificate number to view your online copy.</p>
+
+        <!-- Search Form -->
+        <form id="certificateForm" class="mt-4">
+            <div class="input-group">
+                <input type="text" id="certificate_id" class="form-control" placeholder="Enter Certificate Number"
+                    required>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 ABC COMPUTER. All rights reserved.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("certificateForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var certId = document.getElementById("certificate_id").value.trim(); // Get input value
+
+            // Certificate Mapping (Example)
+            var certificates = {
+
+                //এখানে সকল সার্টিফিকেট নাম্বার দিতে হবে এইচটিএমএল কোড সহ
+                "B62": "b62.html",
+                "1517487854": "b62.html",
+
+            };
+
+            // Check if certificate ID exists in the list
+            if (certificates[certId]) {
+                window.location.href = certificates[certId]; // Redirect to the corresponding certificate page
+            } else {
+                alert("Certificate not found! Please check your number.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
